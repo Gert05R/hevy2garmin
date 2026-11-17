@@ -663,8 +663,7 @@ def sync(
     skip_existing = cfg.get("sync", {}).get("skip_existing", True)
 
     if not limit and not fetch_all and not since:
-        limit = None
-        fetch_all = True
+        limit = cfg.get("sync", {}).get("default_limit", 1)
 
     hevy = HevyClient(api_key=hevy_api_key)
     total_count = hevy.get_workout_count()
