@@ -2288,7 +2288,7 @@ def _minutes_to_cron(minutes: int) -> str:
     if minutes == 60:
         return "0 * * * *"
     if minutes == 1440:
-        return "0 0 * * *"
+        return "0 13 * * *"
     if minutes >= 60 and minutes % 60 == 0:
         hours = minutes // 60
         return f"0 */{hours} * * *"
